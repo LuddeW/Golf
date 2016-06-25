@@ -44,7 +44,6 @@ namespace Golf
             spriteBatch.Begin();
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.End();
-
             base.Draw(gameTime);
         }
     }
