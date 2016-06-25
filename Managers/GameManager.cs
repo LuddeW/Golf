@@ -36,6 +36,7 @@ namespace Golf.Managers
             spriteBatch.Draw(TextureLibrary.flag, new Rectangle(680, 240, 20, 20), Color.White);
             spriteBatch.Draw(TextureLibrary.green, new Rectangle(700, 300, 20, 20), Color.White);
             spriteBatch.Draw(TextureLibrary.green, new Rectangle(720, 300, 20, 20), Color.White);
+            spriteBatch.Draw(TextureLibrary.player1Ball, new Rectangle(620, 290, 10, 10), Color.White);
         }
     }
 }

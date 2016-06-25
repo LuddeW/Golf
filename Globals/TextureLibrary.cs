@@ -15,6 +15,7 @@ namespace Golf
         public static Texture2D cup;
         public static Texture2D flagpost;
         public static Texture2D flag;
+        public static Texture2D player1Ball;
 
         public static void LoadContent(ContentManager Content)
         {
@@ -25,6 +26,7 @@ namespace Golf
             cup = Content.Load<Texture2D>("cup");
             flagpost = Content.Load<Texture2D>("flagpost");
             flag = Content.Load<Texture2D>("flag");
+            player1Ball = Content.Load<Texture2D>("Player1Ball");
         }
     }    
 }
