@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Golf.Managers;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -10,10 +11,13 @@ namespace Golf
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        GameManager gameManager;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            gameManager = new GameManager(Content, this);
         }
 
         protected override void Initialize()
@@ -24,6 +28,7 @@ namespace Golf
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            TextureLibrary.LoadContent(Content);
         }
 
         protected override void UnloadContent()
@@ -43,6 +48,7 @@ namespace Golf
         {
             spriteBatch.Begin();
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            gameManager.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }
