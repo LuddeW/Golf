@@ -39,8 +39,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
+    <Compile Include="GameObjects\GameObject.cs" />
     <Compile Include="Globals\TextureLibrary.cs" />
     <Compile Include="Managers\GameManager.cs" />
+    <Compile Include="GameObjects\Tiles\BunkerTile.cs" />
+    <Compile Include="GameObjects\Tiles\CupTile.cs" />
+    <Compile Include="GameObjects\Tiles\FairwayTile.cs" />
+    <Compile Include="GameObjects\Tiles\GreenTile.cs" />
+    <Compile Include="Map\Grid.cs" />
+    <Compile Include="GameObjects\Tiles\RoughTile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,9 +64,7 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GameObjects\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
