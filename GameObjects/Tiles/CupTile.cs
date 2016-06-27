@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Golf.GameObjects.Tiles
 {
-    class CupTile : GameObject
+    class CupTile : Tile
     {
         public CupTile(Texture2D texture, Vector2 pos) : base(texture, pos)
         {

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Golf.GameObjects.Tiles
 {
-    class RoughTile : GameObject
+    class RoughTile : Tile
     {
         public RoughTile(Texture2D texture, Vector2 pos) : base(texture, pos)
         {

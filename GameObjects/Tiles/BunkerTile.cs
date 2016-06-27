@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Golf.GameObjects.Tiles
 {
-    class BunkerTile : GameObject
+    class BunkerTile : Tile
     {
         public BunkerTile(Texture2D texture, Vector2 pos) : base(texture, pos)
         {
