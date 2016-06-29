@@ -15,7 +15,7 @@ namespace Golf.Map
         public Tile[,] grid;
         public List<GameObject> gameObjects = new List<GameObject>();
 
-        public void CreateGridFactory()
+        public void CreateGrid()
         {
             StreamReader sr = new StreamReader(@"Level1.txt");
             List<string> stringList = new List<string>();
@@ -23,28 +23,29 @@ namespace Golf.Map
             {
                 stringList.Add(sr.ReadLine());
             }
-            grid = new Tile[(int)GlobalValues.HOLE_LENGTH / GlobalValues.TILE_SIZE, (int)GlobalValues.HOLE_HEIGHT / GlobalValues.TILE_SIZE];
-            for (int i = 0; i < GlobalValues.HOLE_LENGTH / GlobalValues.TILE_SIZE; i++)
+            grid = new Tile[40, 24];
+            for (int i = 0; i < 24; i++)
             {
-                for (int k = 0; k < GlobalValues.HOLE_HEIGHT / GlobalValues.TILE_SIZE; k++)
+                var line = stringList[i];               
+                for (int k = 0; k < 40 && k < line.Length; k++)
                 {
-                    switch (stringList[i][k])
+                    switch (line[k])
                     {
                         case 'G':
-                            grid[k, i] = new GreenTile(TextureLibrary.green, new Vector2(i, k));
-                            gameObjects.Add(grid[i, k]);
+                            grid[k, i] = new GreenTile(TextureLibrary.green, new Vector2(k*GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
+                            gameObjects.Add(grid[k, i]);
                             break;
                         case 'F':
-                            grid[k, i] = new FairwayTile(TextureLibrary.fairway, new Vector2(i, k));
-                            gameObjects.Add(grid[i, k]);
+                            grid[k, i] = new FairwayTile(TextureLibrary.fairway, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
+                            gameObjects.Add(grid[k, i]);
                             break;
                         case 'R':
-                            grid[k, i] = new RoughTile(TextureLibrary.rough, new Vector2(i, k));
-                            gameObjects.Add(grid[i, k]);
+                            grid[k, i] = new RoughTile(TextureLibrary.rough, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
+                            gameObjects.Add(grid[k, i]);
                             break;
                         case 'C':
-                            grid[k, i] = new CupTile(TextureLibrary.cup, new Vector2(i, k));
-                            gameObjects.Add(grid[i, k]);
+                            grid[k, i] = new CupTile(TextureLibrary.cup, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
+                            gameObjects.Add(grid[k, i]);
                             break;
                     }
                 }

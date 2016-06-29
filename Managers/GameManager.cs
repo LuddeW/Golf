@@ -26,7 +26,7 @@ namespace Golf.Managers
 
         public void Update()
         {
-            grid.CreateGridFactory();
+            grid.CreateGrid();
         }
 
         public void Draw(SpriteBatch spriteBatch)
