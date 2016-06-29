@@ -23,11 +23,11 @@ namespace Golf.Map
             {
                 stringList.Add(sr.ReadLine());
             }
-            grid = new Tile[40, 24];
-            for (int i = 0; i < 24; i++)
+            grid = new Tile[GlobalValues.HOLE_LENGTH / GlobalValues.TILE_SIZE, GlobalValues.HOLE_HEIGHT / GlobalValues.TILE_SIZE];
+            for (int i = 0; i < GlobalValues.HOLE_HEIGHT / GlobalValues.TILE_SIZE; i++)
             {
                 var line = stringList[i];               
-                for (int k = 0; k < 40 && k < line.Length; k++)
+                for (int k = 0; k < GlobalValues.HOLE_LENGTH / GlobalValues.TILE_SIZE && k < line.Length; k++)
                 {
                     switch (line[k])
                     {

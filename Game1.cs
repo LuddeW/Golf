@@ -29,6 +29,7 @@ namespace Golf
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             TextureLibrary.LoadContent(Content);
+            gameManager.LoadContent();
         }
 
         protected override void UnloadContent()
