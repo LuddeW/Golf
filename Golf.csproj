@@ -45,6 +45,7 @@
     <Compile Include="GameObjects\Tiles\Tile.cs" />
     <Compile Include="Globals\GlobalValues.cs" />
     <Compile Include="Globals\TextureLibrary.cs" />
+    <Compile Include="Managers\CursorManager.cs" />
     <Compile Include="Managers\GameManager.cs" />
     <Compile Include="GameObjects\Tiles\BunkerTile.cs" />
     <Compile Include="GameObjects\Tiles\CupTile.cs" />

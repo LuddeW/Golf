@@ -1,4 +1,5 @@
 ﻿using Golf.GameObjects;
+using Golf.GameObjects.Tiles;
 using Golf.Map;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -13,28 +14,32 @@ namespace Golf.Managers
     class GameManager
     {
         private Grid grid;
+        private CursorManager cursorManager;
         
         public GameManager(ContentManager Content, Game1 game)
         {
             grid = new Grid();
+            cursorManager = new CursorManager();
         }
 
         public void LoadContent()
         {
             grid.CreateGrid();
+            cursorManager.Load();
         }
 
         public void Update()
         {
-            
+            cursorManager.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (GameObject g in grid.gameObjects)
+            foreach (Tile tile in grid.tiles)
             {
-                g.Draw(spriteBatch);
+                tile.Draw(spriteBatch);
             }
+            cursorManager.Draw(spriteBatch);
         }
     }
 }

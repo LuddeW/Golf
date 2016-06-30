@@ -13,7 +13,7 @@ namespace Golf.Map
     class Grid
     {
         public Tile[,] grid;
-        public List<GameObject> gameObjects = new List<GameObject>();
+        public List<Tile> tiles = new List<Tile>();
 
         public void CreateGrid()
         {
@@ -33,19 +33,19 @@ namespace Golf.Map
                     {
                         case 'G':
                             grid[k, i] = new GreenTile(TextureLibrary.green, new Vector2(k*GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
-                            gameObjects.Add(grid[k, i]);
+                            tiles.Add(grid[k, i]);
                             break;
                         case 'F':
                             grid[k, i] = new FairwayTile(TextureLibrary.fairway, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
-                            gameObjects.Add(grid[k, i]);
+                            tiles.Add(grid[k, i]);
                             break;
                         case 'R':
                             grid[k, i] = new RoughTile(TextureLibrary.rough, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
-                            gameObjects.Add(grid[k, i]);
+                            tiles.Add(grid[k, i]);
                             break;
                         case 'C':
                             grid[k, i] = new CupTile(TextureLibrary.cup, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
-                            gameObjects.Add(grid[k, i]);
+                            tiles.Add(grid[k, i]);
                             break;
                     }
                 }
