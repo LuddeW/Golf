@@ -50,6 +50,7 @@
     <Compile Include="GameObjects\Tiles\WaterTile.cs" />
     <Compile Include="Globals\GlobalValues.cs" />
     <Compile Include="Globals\TextureLibrary.cs" />
+    <Compile Include="Managers\BallManager.cs" />
     <Compile Include="Managers\CursorManager.cs" />
     <Compile Include="Managers\GameManager.cs" />
     <Compile Include="GameObjects\Tiles\BunkerTile.cs" />
