@@ -1,6 +1,7 @@
 ﻿using Golf.GameObjects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,8 @@ namespace Golf.Managers
 
         public void Update()
         {
-
+            Player1MoveCursor();
+            Player2MoveCursor();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -37,6 +39,45 @@ namespace Golf.Managers
             foreach (Cursor cursor in cursors)
             {
                 cursor.Draw(spriteBatch);
+            }
+        }
+
+        private void Player1MoveCursor()
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            {
+                player1Cursor.pos.Y -= 2;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            {
+                player1Cursor.pos.Y += 2;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            {
+                player1Cursor.pos.X -= 2;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            {
+                player1Cursor.pos.X += 2;
+            }
+        }
+        private void Player2MoveCursor()
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            {
+                player2Cursor.pos.Y -= 2;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+            {
+                player2Cursor.pos.Y += 2;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+            {
+                player2Cursor.pos.X -= 2;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+            {
+                player2Cursor.pos.X += 2;
             }
         }
     }
