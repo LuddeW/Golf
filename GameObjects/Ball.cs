@@ -12,10 +12,12 @@ namespace Golf.GameObjects
         private Vector2 offset;
         private Vector2 direction;
         private Vector2 speed;
+        private float gravity;
 
         public Ball(Texture2D texture, Vector2 pos) : base(texture, pos)
         {
             offset = new Vector2(10, 10);
+            gravity = 9.82f;
         }
 
         public void Update()
