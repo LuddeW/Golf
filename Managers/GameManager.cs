@@ -39,6 +39,10 @@ namespace Golf.Managers
             {
                 tile.Draw(spriteBatch);
             }
+            foreach (Ball ball in grid.balls)
+            {
+                ball.Draw(spriteBatch);
+            }
             cursorManager.Draw(spriteBatch);
         }
     }
