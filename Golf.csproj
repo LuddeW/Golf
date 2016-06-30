@@ -41,8 +41,13 @@
     <Compile Include="Game1.cs" />
     <Compile Include="GameObjects\Ball.cs" />
     <Compile Include="GameObjects\Cursor.cs" />
+    <Compile Include="GameObjects\Tiles\FlagTile.cs" />
     <Compile Include="GameObjects\GameObject.cs" />
+    <Compile Include="GameObjects\Tiles\FlagStickTile.cs" />
+    <Compile Include="GameObjects\Tiles\MudTile.cs" />
+    <Compile Include="GameObjects\Tiles\StoneTile.cs" />
     <Compile Include="GameObjects\Tiles\Tile.cs" />
+    <Compile Include="GameObjects\Tiles\WaterTile.cs" />
     <Compile Include="Globals\GlobalValues.cs" />
     <Compile Include="Globals\TextureLibrary.cs" />
     <Compile Include="Managers\CursorManager.cs" />

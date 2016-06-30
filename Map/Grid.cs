@@ -47,6 +47,30 @@ namespace Golf.Map
                             grid[k, i] = new CupTile(TextureLibrary.cup, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
                             tiles.Add(grid[k, i]);
                             break;
+                        case 'B':
+                            grid[k, i] = new BunkerTile(TextureLibrary.bunker, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
+                            tiles.Add(grid[k, i]);
+                            break;
+                        case 'S':
+                            grid[k, i] = new StoneTile(TextureLibrary.stone, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
+                            tiles.Add(grid[k, i]);
+                            break;
+                        case 'W':
+                            grid[k, i] = new WaterTile(TextureLibrary.water, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
+                            tiles.Add(grid[k, i]);
+                            break;
+                        case 'M':
+                            grid[k, i] = new MudTile(TextureLibrary.mud, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
+                            tiles.Add(grid[k, i]);
+                            break;
+                        case 'P':
+                            grid[k, i] = new FlagStickTile(TextureLibrary.flagpost, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
+                            tiles.Add(grid[k, i]);
+                            break;
+                        case 'Q':
+                            grid[k, i] = new FlagTile(TextureLibrary.flag, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
+                            tiles.Add(grid[k, i]);
+                            break;
                     }
                 }
             }
