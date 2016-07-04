@@ -1,4 +1,5 @@
 ﻿using Golf.GameObjects;
+using Golf.Map;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -32,6 +33,10 @@ namespace Golf.Managers
             foreach (Ball ball in balls)
             {
                 ball.Update();
+                //if (ball.hitbox.Intersects())
+                //{
+                //
+                //}
             }
         }
 
