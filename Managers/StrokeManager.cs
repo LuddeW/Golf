@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,13 +25,14 @@ namespace Golf.Managers
             currentKeyboard = Keyboard.GetState();
             if (currentKeyboard.IsKeyDown(Keys.RightControl) && !oldKeyboard.IsKeyDown(Keys.RightControl))
             {
-                ballManager.player1Ball.velocity.X = cursorManager.player1Cursor.pos.X / 100;
-                ballManager.player1Ball.velocity.Y = -cursorManager.player1Cursor.pos.Y / 100;
+                ballManager.player1Ball.velocity.X = (cursorManager.player1Cursor.pos.X - ballManager.player1Ball.pos.X) / 100;
+                ballManager.player1Ball.velocity.Y = (-cursorManager.player1Cursor.pos.Y / 100 - ballManager.player1Ball.pos.Y) / 100;
+                //Vector2.Normalize()
             }
             if (currentKeyboard.IsKeyDown(Keys.LeftControl) && !oldKeyboard.IsKeyDown(Keys.LeftControl))
             {
-                ballManager.player2Ball.velocity.X = cursorManager.player2Cursor.pos.X / 100;
-                ballManager.player2Ball.velocity.Y = -cursorManager.player2Cursor.pos.Y / 100;
+                ballManager.player2Ball.velocity.X = (cursorManager.player2Cursor.pos.X - ballManager.player2Ball.pos.X) / 100;
+                ballManager.player2Ball.velocity.Y = (-cursorManager.player2Cursor.pos.Y / 100 - ballManager.player2Ball.pos.Y) / 100;
             }
         }
     }
