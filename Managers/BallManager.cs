@@ -33,15 +33,13 @@ namespace Golf.Managers
         {
             foreach (Tile tile in Grid.tiles)
             {
-                foreach (Ball ball in balls)
+                if (player1Ball.hitbox.Intersects(tile.hitbox))
                 {
-                    ball.Update();
-                    if (ball.hitbox.Intersects(tile.hitbox))
-                    {
-                        //ball.pos.Y += 1;
-                    }
+                    player1Ball.pos.Y -= 1;
                 }
             }
+            player1Ball.Update();
+            player2Ball.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
