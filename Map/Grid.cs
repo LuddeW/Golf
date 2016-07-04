@@ -1,6 +1,7 @@
 ﻿using Golf.GameObjects;
 using Golf.GameObjects.Tiles;
 using Golf.Globals;
+using Golf.Managers;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Golf.Map
         public Tile[,] grid;
         public List<Tile> tiles = new List<Tile>();
         public List<Ball> balls = new List<Ball>();
+        public Vector2 ballStartPos;
 
         public void CreateGrid()
         {
@@ -73,10 +75,7 @@ namespace Golf.Map
                             tiles.Add(grid[k, i]);
                             break;
                         case 'X':
-                            Ball ball1 = new Ball(TextureLibrary.player1Ball, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
-                            Ball ball2= new Ball(TextureLibrary.player2Ball, new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE));
-                            balls.Add(ball1);
-                            balls.Add(ball2);
+                            ballStartPos = new Vector2(k * GlobalValues.TILE_SIZE, i * GlobalValues.TILE_SIZE);
                             break;
                     }
                 }

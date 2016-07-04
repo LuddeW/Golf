@@ -15,26 +15,26 @@ namespace Golf.Managers
     {
         private Grid grid;
         private CursorManager cursorManager;
+        private BallManager ballManager;
         
         public GameManager(ContentManager Content, Game1 game)
         {
             grid = new Grid();
             cursorManager = new CursorManager();
+            ballManager = new BallManager();
         }
 
         public void LoadContent()
         {
             grid.CreateGrid();
             cursorManager.Load();
+            ballManager.LoadContent(grid.ballStartPos);
         }
 
         public void Update()
         {
             cursorManager.Update();
-            foreach (Ball ball in grid.balls)
-            {
-                ball.Update();
-            }
+            ballManager.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -43,10 +43,7 @@ namespace Golf.Managers
             {
                 tile.Draw(spriteBatch);
             }
-            foreach (Ball ball in grid.balls)
-            {
-                ball.Draw(spriteBatch);
-            }
+            ballManager.Draw(spriteBatch);
             cursorManager.Draw(spriteBatch);
         }
     }
