@@ -13,16 +13,12 @@ namespace Golf.Managers
 {
     class BallManager
     {
-        Ball player1Ball;
-        Ball player2Ball;
+        public Ball player1Ball;
+        public Ball player2Ball;
         List<Ball> balls;
-        KeyboardState currentKeyboard;
-        KeyboardState oldKeyboard;
-        CursorManager cursorManager;
 
-        public BallManager(CursorManager cursorManager)
+        public BallManager()
         {
-            this.cursorManager = cursorManager;
             balls = new List<Ball>();
         }
 
@@ -35,9 +31,7 @@ namespace Golf.Managers
         }
 
         public void Update()
-        {
-            oldKeyboard = currentKeyboard;
-            currentKeyboard = Keyboard.GetState();  
+        {  
             foreach (Tile tile in Grid.tiles)
             {
                 if (player1Ball.hitbox.Intersects(tile.hitbox))
@@ -51,14 +45,8 @@ namespace Golf.Managers
                     player2Ball.velocity.Y = 0;
                 }
             }
-            if (currentKeyboard.IsKeyDown(Keys.Space) && !oldKeyboard.IsKeyDown(Keys.Space))
-            {
-                player1Ball.velocity.X = cursorManager.player1Cursor.pos.X / 100;
-                player1Ball.velocity.Y = -cursorManager.player1Cursor.pos.Y / 100;
-            }
             player1Ball.Update();
             player2Ball.Update();
-            Console.WriteLine(player1Ball.velocity.X);
         }
 
         public void Draw(SpriteBatch spriteBatch)

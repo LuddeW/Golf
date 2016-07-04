@@ -16,12 +16,14 @@ namespace Golf.Managers
         private Grid grid;
         private CursorManager cursorManager;
         private BallManager ballManager;
+        private StrokeManager strokeManager;
         
         public GameManager(ContentManager Content, Game1 game)
         {
             grid = new Grid();
             cursorManager = new CursorManager();
-            ballManager = new BallManager(cursorManager);
+            ballManager = new BallManager();
+            strokeManager = new StrokeManager(cursorManager, ballManager);
         }
 
         public void LoadContent()
@@ -35,6 +37,7 @@ namespace Golf.Managers
         {
             cursorManager.Update();
             ballManager.Update();
+            strokeManager.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)

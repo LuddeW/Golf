@@ -57,6 +57,7 @@
     <Compile Include="GameObjects\Tiles\CupTile.cs" />
     <Compile Include="GameObjects\Tiles\FairwayTile.cs" />
     <Compile Include="GameObjects\Tiles\GreenTile.cs" />
+    <Compile Include="Managers\StrokeManager.cs" />
     <Compile Include="Map\Grid.cs" />
     <Compile Include="GameObjects\Tiles\RoughTile.cs" />
     <Compile Include="Program.cs" />
