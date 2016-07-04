@@ -17,12 +17,14 @@ namespace Golf.GameObjects
         public Ball(Texture2D texture, Vector2 pos) : base(texture, pos)
         {
             offset = new Vector2(10, 10);
-            gravity = 9.82f;
+            gravity = 0.982f;
+            
         }
 
         public void Update()
         {
-
+            pos.Y += gravity;
+            pos += speed;
         }
 
         public override void Draw(SpriteBatch spriteBatch)

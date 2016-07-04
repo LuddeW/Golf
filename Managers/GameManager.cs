@@ -31,6 +31,10 @@ namespace Golf.Managers
         public void Update()
         {
             cursorManager.Update();
+            foreach (Ball ball in grid.balls)
+            {
+                ball.Update();
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
