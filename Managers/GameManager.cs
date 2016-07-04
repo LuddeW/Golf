@@ -39,7 +39,7 @@ namespace Golf.Managers
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (Tile tile in grid.tiles)
+            foreach (Tile tile in Grid.tiles)
             {
                 tile.Draw(spriteBatch);
             }

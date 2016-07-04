@@ -14,7 +14,7 @@ namespace Golf.Map
     class Grid
     {
         public Tile[,] grid;
-        public List<Tile> tiles = new List<Tile>();
+        public static List<Tile> tiles = new List<Tile>();
         public List<Ball> balls = new List<Ball>();
         public Vector2 ballStartPos;
 

@@ -1,4 +1,5 @@
 ﻿using Golf.GameObjects;
+using Golf.GameObjects.Tiles;
 using Golf.Map;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -30,13 +31,16 @@ namespace Golf.Managers
 
         public void Update()
         {
-            foreach (Ball ball in balls)
+            foreach (Tile tile in Grid.tiles)
             {
-                ball.Update();
-                //if (ball.hitbox.Intersects())
-                //{
-                //
-                //}
+                foreach (Ball ball in balls)
+                {
+                    ball.Update();
+                    if (ball.hitbox.Intersects(tile.hitbox))
+                    {
+                        //ball.pos.Y += 1;
+                    }
+                }
             }
         }
 
