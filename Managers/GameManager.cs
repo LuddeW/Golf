@@ -21,14 +21,14 @@ namespace Golf.Managers
         {
             grid = new Grid();
             cursorManager = new CursorManager();
-            ballManager = new BallManager();
+            ballManager = new BallManager(cursorManager);
         }
 
         public void LoadContent()
         {
             grid.CreateGrid();
             cursorManager.Load();
-            ballManager.LoadContent(grid.ballStartPos);
+            ballManager.Load(grid.ballStartPos);
         }
 
         public void Update()

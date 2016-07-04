@@ -20,18 +20,18 @@ namespace Golf.Managers
         KeyboardState oldKeyboard;
         CursorManager cursorManager;
 
-        public BallManager()
+        public BallManager(CursorManager cursorManager)
         {
+            this.cursorManager = cursorManager;
             balls = new List<Ball>();
         }
 
-        public void LoadContent(Vector2 ballStartPos)
+        public void Load(Vector2 ballStartPos)
         {
             player1Ball = new Ball(TextureLibrary.player1Ball, ballStartPos);
             player2Ball = new Ball(TextureLibrary.player2Ball, ballStartPos);
             balls.Add(player1Ball);
             balls.Add(player2Ball);
-            cursorManager = new CursorManager();
         }
 
         public void Update()
@@ -53,8 +53,8 @@ namespace Golf.Managers
             }
             if (currentKeyboard.IsKeyDown(Keys.Space) && !oldKeyboard.IsKeyDown(Keys.Space))
             {
-                player1Ball.velocity.X -= cursorManager.player1Cursor.pos.X / 100;
-                player1Ball.velocity.Y += cursorManager.player1Cursor.pos.Y / 100;
+                player1Ball.velocity.X = cursorManager.player1Cursor.pos.X / 100;
+                player1Ball.velocity.Y = -cursorManager.player1Cursor.pos.Y / 100;
             }
             player1Ball.Update();
             player2Ball.Update();
