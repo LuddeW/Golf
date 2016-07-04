@@ -14,7 +14,6 @@ namespace Golf.Managers
         public Cursor player1Cursor;
         public Cursor player2Cursor;
         List<Cursor> cursors = new List<Cursor>();
-        public Vector2 p1;
 
         public CursorManager()
         {           
@@ -33,7 +32,6 @@ namespace Golf.Managers
         {
             Player1MoveCursor();
             Player2MoveCursor();
-            p1 = player1Cursor.pos;
         }
 
         public void Draw(SpriteBatch spriteBatch)
