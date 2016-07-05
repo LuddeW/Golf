@@ -27,7 +27,6 @@ namespace Golf.Managers
             {
                 ballManager.player1Ball.velocity.X = (cursorManager.player1Cursor.pos.X - ballManager.player1Ball.pos.X) / 100;
                 ballManager.player1Ball.velocity.Y = (-cursorManager.player1Cursor.pos.Y / 100 - ballManager.player1Ball.pos.Y) / 100;
-                //Vector2.Normalize()
             }
             if (currentKeyboard.IsKeyDown(Keys.LeftControl) && !oldKeyboard.IsKeyDown(Keys.LeftControl))
             {

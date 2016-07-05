@@ -28,7 +28,11 @@ namespace Golf.GameObjects
             if (velocity.X > 0)
             {
                 velocity.X -= 0.05f;
-            }   
+            }
+            if (velocity.X < 0.1 && velocity.X > 0)
+            {
+                velocity.X = 0;
+            }
             pos.X += velocity.X;
             pos.Y += velocity.Y;
             hitbox = new Rectangle((int)pos.X + (int)offset.X, (int)pos.Y + (int)offset.Y, 10, 10);
