@@ -23,15 +23,16 @@ namespace Golf.Managers
         {
             oldKeyboard = currentKeyboard;
             currentKeyboard = Keyboard.GetState();
+            Console.WriteLine(((ballManager.player1Ball.pos.Y / 100) - cursorManager.player1Cursor.pos.Y / 100));
             if (currentKeyboard.IsKeyDown(Keys.RightControl) && !oldKeyboard.IsKeyDown(Keys.RightControl))
             {
                 ballManager.player1Ball.velocity.X = (cursorManager.player1Cursor.pos.X - ballManager.player1Ball.pos.X) / 100;
-                ballManager.player1Ball.velocity.Y = (-cursorManager.player1Cursor.pos.Y / 100 - ballManager.player1Ball.pos.Y) / 100;
+                ballManager.player1Ball.velocity.Y = (((ballManager.player1Ball.pos.Y / 100) - cursorManager.player1Cursor.pos.Y / 100) * -1 * 2);
             }
             if (currentKeyboard.IsKeyDown(Keys.LeftControl) && !oldKeyboard.IsKeyDown(Keys.LeftControl))
             {
                 ballManager.player2Ball.velocity.X = (cursorManager.player2Cursor.pos.X - ballManager.player2Ball.pos.X) / 100;
-                ballManager.player2Ball.velocity.Y = (-cursorManager.player2Cursor.pos.Y / 100 - ballManager.player2Ball.pos.Y) / 100;
+                ballManager.player2Ball.velocity.Y = (((ballManager.player2Ball.pos.Y / 100) - cursorManager.player2Cursor.pos.Y / 100) * -1 * 2);
             }
         }
     }

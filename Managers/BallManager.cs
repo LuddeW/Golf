@@ -47,7 +47,7 @@ namespace Golf.Managers
 
         public void KeepTheBallOnGround()
         {
-            foreach (FairwayTile tile in Grid.tiles)
+            foreach (Tile tile in Grid.tiles)
             {
                 if (player1Ball.hitbox.Intersects(tile.hitbox))
                 {
