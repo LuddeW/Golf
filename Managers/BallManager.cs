@@ -31,22 +31,10 @@ namespace Golf.Managers
         }
 
         public void Update()
-        {  
-            foreach (Tile tile in Grid.tiles)
-            {
-                if (player1Ball.hitbox.Intersects(tile.hitbox))
-                {
-                    player1Ball.pos.Y -= 1;
-                    player1Ball.velocity.Y = 0;
-                }
-                if (player2Ball.hitbox.Intersects(tile.hitbox))
-                {
-                    player2Ball.pos.Y -= 1;
-                    player2Ball.velocity.Y = 0;
-                }
-            }
+        {            
             player1Ball.Update();
             player2Ball.Update();
+            KeepTheBallOnGround();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -54,6 +42,23 @@ namespace Golf.Managers
             foreach (Ball ball in balls)
             {
                 ball.Draw(spriteBatch);
+            }
+        }
+
+        public void KeepTheBallOnGround()
+        {
+            foreach (FairwayTile tile in Grid.tiles)
+            {
+                if (player1Ball.hitbox.Intersects(tile.hitbox))
+                {
+                    player1Ball.pos.Y -= 1;
+                    player1Ball.velocity.Y *= -1 * 0.55f;
+                }
+                if (player2Ball.hitbox.Intersects(tile.hitbox))
+                {
+                    player2Ball.pos.Y -= 1;
+                    player2Ball.velocity.Y *= -1 * 0.55f;
+                }
             }
         }
     }

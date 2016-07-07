@@ -11,7 +11,7 @@ namespace Golf.GameObjects
     {
         private Vector2 offset;
         public Vector2 velocity;
-        private float gravity;
+        public float gravity;
         public Rectangle hitbox;
 
         public Ball(Texture2D texture, Vector2 pos) : base(texture, pos)
@@ -24,15 +24,8 @@ namespace Golf.GameObjects
 
         public void Update()
         {
-            velocity.Y += gravity;  
-            if (velocity.X > 0)
-            {
-                velocity.X -= 0.05f;
-            }
-            if (velocity.X < 0.1 && velocity.X > 0)
-            {
-                velocity.X = 0;
-            }
+            velocity.Y += gravity;
+            Friction();
             pos.X += velocity.X;
             pos.Y += velocity.Y;
             hitbox = new Rectangle((int)pos.X + (int)offset.X, (int)pos.Y + (int)offset.Y, 10, 10);
@@ -41,6 +34,26 @@ namespace Golf.GameObjects
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, pos + offset, Color.White);
+        }
+
+        private void Friction()
+        {
+            if (velocity.X > 0)
+            {
+                velocity.X -= 0.02f;
+            }
+            if (velocity.X < 0.05 && velocity.X > 0)
+            {
+                velocity.X = 0;
+            }
+            if (velocity.X < 0)
+            {
+                velocity.X += 0.02f;
+            }
+            if (velocity.X > 0.05 && velocity.X < 0)
+            {
+                velocity.X = 0;
+            }
         }
     }
 }
